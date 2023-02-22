@@ -1,0 +1,43 @@
+table {
+	table-layout: fixed;
+	border-collapse: collapse;
+	border: 2px solid #3573b3;
+	align: center;
+	item-align: center;
+	text-align: center;
+	vertical-align: middle;
+}
+
+caption {
+	font-size:40%;
+	caption-side: bottom;
+	text-align: right;
+}
+
+thead th {
+    background-color: #3573b3;
+    color: #ffffff;
+	font-size:larger;
+	padding: 10px;
+}
+
+td,th {
+    border: 1px solid #000000;
+    text-align: center;
+    vertical-align: middle;
+}
+
+th[scope='col'] {
+    background-color: #e3e2d7;
+    color: #000000;
+	font-size: 80%;
+}
+
+tfoot th {
+	border: none;
+	background-color: #e3e2d7;
+}
+
+input{
+	width: 90%;
+}
