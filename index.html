@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
- 
 	<head>
 		<meta charset="utf-8">
 		<title>Estimated Monthly Stormwater Drainage Fee</title>
 		<link rel="stylesheet" href="styles.css">
 	</head>
- 
 	<body>
 		<table align="center">
+			<caption>*property qualification is determined by City of Vancouver Surface Water Engineering staff</caption>
 			<thead>
 				<tr>
-					<th scope:"col" colspan="2"><h3>Estimate Monthly Stormwater Drainage Fee</h3></th>
+					<th scope:"col" colspan="4">Estimate Monthly Stormwater Drainage Fee</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
 					<th scope="col">
-						<label for="areainput" >Hard Surface Area: </label>
+						<label for="areainput">Hard Surface Area:</label>
 					</th>
 					<th scope="col">
-						<label for="units">Units: </label>
+						<label for="units">Units:</label>
+					</th>
+							<th scope="col">
+						<label for="serviceclass">Property Use:</label>
+					</th>
+					<th scope="col">
+						<label for="discountbox">Discount:</label>
 					</th>
 				<tr>
 					<td>
-						<input type="number" id="areainput" min="0" max="2178000" />
+						<input type="number" id="areainput" min="0" max="2178000" placeholder="acres or sqft"/>
 					</td>
 					<td>
 						<select id="units" name="units">
@@ -32,18 +37,6 @@
 							<option value="square-feet">Square feet</option>
 						</select>
 					</td>
-				</tr>
-			</tbody>
-			<tbody>
-				<tr>
-					<th scope="col">
-						<label for="serviceclass">Property Use</label>
-					</th>
-					<th scope="col">
-						<label for="discountbox">Discount</label>
-					</th>
-				</tr>
-				<tr>
 					<td>
 						<select id="serviceclass" name="serviceclass">
 							<option value="commercial">Commerical</option>
@@ -57,17 +50,18 @@
 						<input type="checkbox" id="discountbox" name="discountbox" />
 					</td>
 				</tr>
+			</tbody>
+			<tfoot>
 				<tr>
-					<th scope="col">
+					<th scope="row">
 						<button type="button" id="btn" onclick="utilityRateCalculator()">Calculate</button>
 					</th>
-					<th scope="col">
+					<th scope="row" colspan="3">
 						<input class="display-box" type="text" id="result" disabled />
 					</th>
 				</tr>
-			</tbody>
+			</tfoot>
 		</table>
-
 		<script>
 			function utilityRateCalculator() {
 				//utility rate per 2500 sqft - need to update annually
@@ -95,7 +89,5 @@
 				document.getElementById("result").value = '$'+String(result)+' per month';
 			}
 		</script>
-	 
 	</body>
- 
 </html>
